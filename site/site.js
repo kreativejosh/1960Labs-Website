@@ -272,6 +272,15 @@
       item.classList.toggle('open', open); b.setAttribute('aria-expanded', String(open));
     }));
   });
+  // sector tiles and #sector-* links open the matching row
+  const openSector = id => {
+    const item = document.getElementById(id);
+    if (!item || !item.classList.contains('acc-item')) return;
+    if (!item.classList.contains('open')) $('.acc-btn', item).click();
+  };
+  $$('[data-open]').forEach(a => a.addEventListener('click', () => openSector(a.dataset.open)));
+  if (location.hash.startsWith('#sector-')) openSector(location.hash.slice(1));
+  addEventListener('hashchange', () => { if (location.hash.startsWith('#sector-')) openSector(location.hash.slice(1)); });
 
   /* ---------- work band carousel ---------- */
   $$('[data-work]').forEach(w => {

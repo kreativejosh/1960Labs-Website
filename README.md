@@ -4,10 +4,8 @@ Static marketing site for 1960 Labs, built on the 1960 Labs brand system v1.0. P
 
 ## Pages
 
-- `index.html` - Home
+- `index.html` - Home, including the Sectors (`#sectors`) and How we work (`#how`) sections
 - `work.html` - CreditHub and 1960 Network
-- `sectors.html` - Finance, telecoms, logistics, marketing
-- `how-we-work.html` - Diagnose, Redesign, Build, Run, Measure
 - `diagnostic.html` - Book a diagnostic (form not yet wired to a backend)
 - `legal.html` - Privacy, terms, data handling (placeholders)
 
@@ -15,7 +13,7 @@ Static marketing site for 1960 Labs, built on the 1960 Labs brand system v1.0. P
 
 - `site/` - the built site. Deploy this folder as-is to any static host.
 - `src/pages/` - page bodies
-- `src/vignettes.html` - example UI cards shared by Home and How we work
+- `src/vignettes.html` - example UI cards for the How we work section
 - `src/styles.css`, `src/site.js` - shared styles and behaviour
 - `src/build.py` - adds the shared head, header, footer and logo to each page
 

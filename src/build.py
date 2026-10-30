@@ -33,7 +33,7 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
            "%3Cpath d='M1 1H4V6H7.5V15H1Z M3 8.5H5.5V13H3Z' fill='%230B0B0C' fill-rule='evenodd'/%3E"
            "%3Cpath d='M8.5 1H15V15H8.5Z M10.5 3H13V13H10.5Z' fill='%230B0B0C' fill-rule='evenodd'/%3E%3C/svg%3E")
 
-NAV = [("work.html", "Work"), ("sectors.html", "Sectors"), ("how-we-work.html", "How we work")]
+NAV = [("work.html", "Work"), ("index.html#sectors", "Sectors"), ("index.html#how", "How we work")]
 
 
 def head(title, desc):
@@ -79,7 +79,7 @@ def footer():
     return f"""<footer class="ftr gut">
   <div class="wrap">
     <div class="f-cols">
-      <div><h2>Company</h2><ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="sectors.html">Sectors</a></li><li><a href="how-we-work.html">How we work</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="index.html#sectors">Sectors</a></li><li><a href="index.html#how">How we work</a></li></ul></div>
       <div><h2>Contact</h2><div class="f-mail"><span class="addr">work@1960labs.com</span><button class="copy" type="button" data-copy="work@1960labs.com">Copy</button></div>
         <a class="btn btn-light btn-sm" href="diagnostic.html"><span>Book a diagnostic</span></a></div>
       <div><h2>Social</h2><ul><li><a href="https://www.linkedin.com/" data-todo="1960 Labs LinkedIn URL">LinkedIn</a></li><li><a href="https://x.com/" data-todo="1960 Labs X URL">X</a></li></ul></div>
@@ -104,8 +104,6 @@ CTA = f"""<section class="cta gut" aria-labelledby="cta-h">
 PAGES = {
     "index.html": ("1960 Labs", "Custom software, automation and AI for finance, telecoms, logistics and marketing teams whose processes don't fit off-the-shelf tools.", "index.html"),
     "work.html": ("Work · 1960 Labs", "Live systems from 1960 Labs: CreditHub embedded credit infrastructure and 1960 Network telecoms quality monitoring.", "work.html"),
-    "sectors.html": ("Sectors · 1960 Labs", "1960 Labs builds inside finance, telecoms, logistics and marketing operations.", "sectors.html"),
-    "how-we-work.html": ("How we work · 1960 Labs", "Diagnose. Redesign. Build. Run. Measure. How 1960 Labs takes a process from first workshop to live system.", "how-we-work.html"),
     "diagnostic.html": ("Book a diagnostic · 1960 Labs", "Book a 30-minute diagnostic with 1960 Labs.", "diagnostic.html"),
     "legal.html": ("Legal · 1960 Labs", "Privacy Policy, Terms of Use and how 1960 Labs handles your data.", "legal.html"),
 }
