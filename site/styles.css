@@ -278,36 +278,13 @@ h1, h2, h3, h4 { margin: 0; color: var(--ink); font-weight: 600; text-wrap: bala
 @media (max-width: 900px) { .ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; } .ladder::before { display: none; } }
 @media (max-width: 520px) { .ladder { grid-template-columns: minmax(0, 1fr); } }
 
-/* ---------- sectors accordion (Poetic's roles list) ---------- */
-.acc { margin-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--ink); }
-.acc-item { border-bottom: 1px solid var(--line); }
-.acc-btn { display: grid; grid-template-columns: minmax(0, 1fr) auto 28px; align-items: center; gap: 16px; width: 100%; background: none; border: 0; padding: 18px 0; cursor: pointer; text-align: left; }
-.acc-name { font: 600 clamp(26px, 3vw, 40px)/1.05 var(--font-sans); letter-spacing: -.04em; color: var(--muted-2); transition: color var(--dur-base) var(--ease-standard); }
-.acc-meta { font: 500 12px/16px var(--font-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted-2); text-align: right; }
-.acc-ic { width: 28px; height: 28px; display: grid; place-items: center; color: var(--ink); }
-.acc-ic svg { width: 20px; height: 20px; transition: transform var(--dur-base) var(--ease-out); }
-.acc-btn:hover .acc-name, .acc-item.open .acc-name { color: var(--ink); }
-.acc-item.open .acc-meta { color: var(--muted); }
-.acc-item.open .acc-ic svg { transform: rotate(45deg); }
-.acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur-slow) var(--ease-open); }
-.acc-item.open .acc-panel { grid-template-rows: 1fr; }
-.acc-panel > div { overflow: hidden; min-height: 0; }
-.acc-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 20px 48px; padding: 4px 0 32px; }
-.acc-in > p { color: var(--ink-2); font-size: 17px; line-height: 25px; max-width: 34ch; }
-.acc-in .tlink { margin-top: 18px; }
-@media (max-width: 760px) { .acc-in { grid-template-columns: minmax(0, 1fr); } .acc-meta { display: none; } }
-
-.ba { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--line); }
-.ba > div { padding: 18px 18px 20px; display: grid; gap: 10px; align-content: start; }
-.ba > div + div { border-left: 1px solid var(--line); }
-.ba .lbl { display: inline-flex; align-items: center; gap: 8px; font: 500 11px/14px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-.ba .b .lbl::before { content: ""; width: 14px; height: 0; border-top: 1px dashed var(--muted-2); }
-.ba .a .lbl { color: var(--ink); }
-.ba .a .lbl::before { content: ""; width: 8px; height: 8px; background: var(--blue); }
-.ba p { font: 500 17px/23px var(--font-sans); letter-spacing: -.015em; color: var(--ink); }
-.ba .b p { color: var(--muted); }
-.ba p::first-letter { text-transform: uppercase; }
-@media (max-width: 520px) { .ba { grid-template-columns: minmax(0, 1fr); } .ba > div + div { border-left: 0; border-top: 1px solid var(--line); } }
+/* ---------- sectors list (Poetic's roles list) ---------- */
+.slist { margin-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--ink); }
+.srow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 48px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--line); scroll-margin-top: calc(var(--hdr) + 24px); }
+.srow h3 { font-size: clamp(26px, 3vw, 40px); line-height: 1.05; letter-spacing: -.04em; color: var(--muted-2); transition: color var(--dur-base) var(--ease-standard); }
+.srow:hover h3, .srow:target h3 { color: var(--ink); }
+.srow p { color: var(--muted); font-size: 17px; line-height: 25px; max-width: 40ch; }
+@media (max-width: 640px) { .srow { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- work band (Poetic's testimonial carousel) ---------- */
 .wb { background: var(--night) var(--grain); color: var(--on-night); padding-block: clamp(20px, 3vw, 32px) 0; overflow: hidden; }
@@ -419,7 +396,6 @@ h1, h2, h3, h4 { margin: 0; color: var(--ink); font-weight: 600; text-wrap: bala
 .row-txt .k { font: 500 12px/16px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
 .row-txt p { font: 600 16px/21px var(--font-sans); letter-spacing: -.015em; color: var(--ink); max-width: 36ch; }
 .row-txt p.plain { font-weight: 400; color: var(--ink-2); line-height: 24px; letter-spacing: 0; }
-.row-txt .ba { width: 100%; background: var(--paper); }
 @media (max-width: 860px) { .row { grid-template-columns: minmax(0, 1fr); } .row.rev .row-vis { order: 0; } }
 
 /* chips index on sub-pages */

@@ -264,24 +264,6 @@
     show(0);
   });
 
-  /* ---------- accordion (Sectors) ---------- */
-  $$('.acc').forEach(acc => {
-    $$('.acc-btn', acc).forEach(b => b.addEventListener('click', () => {
-      const item = b.closest('.acc-item'), open = !item.classList.contains('open');
-      $$('.acc-item', acc).forEach(i => { i.classList.remove('open'); $('.acc-btn', i).setAttribute('aria-expanded', 'false'); });
-      item.classList.toggle('open', open); b.setAttribute('aria-expanded', String(open));
-    }));
-  });
-  // sector tiles and #sector-* links open the matching row
-  const openSector = id => {
-    const item = document.getElementById(id);
-    if (!item || !item.classList.contains('acc-item')) return;
-    if (!item.classList.contains('open')) $('.acc-btn', item).click();
-  };
-  $$('[data-open]').forEach(a => a.addEventListener('click', () => openSector(a.dataset.open)));
-  if (location.hash.startsWith('#sector-')) openSector(location.hash.slice(1));
-  addEventListener('hashchange', () => { if (location.hash.startsWith('#sector-')) openSector(location.hash.slice(1)); });
-
   /* ---------- work band carousel ---------- */
   $$('[data-work]').forEach(w => {
     const tabs = $$('.wb-tabs button', w), slides = $$('.wb-slide', w), vis = $$('.wb-vis > div', w), names = $$('.wb-name span', w);
