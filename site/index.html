@@ -52,10 +52,10 @@
     </div>
     <div class="rule"></div>
     <div class="tiles4">
-      <a class="tile" href="#sector-finance"><span class="tile-k">Finance</span><span class="tile-n">01</span><svg class="schem" data-kind="t-finance" data-tone="night" aria-hidden="true"></svg><span class="tile-d">Credit decisions, reconciliations, compliance reporting</span></a>
-      <a class="tile" href="#sector-telecoms"><span class="tile-k">Telecoms</span><span class="tile-n">02</span><svg class="schem" data-kind="t-telecoms" data-tone="night" aria-hidden="true"></svg><span class="tile-d">Network quality, regulatory oversight, operations at scale</span></a>
-      <a class="tile" href="#sector-logistics"><span class="tile-k">Logistics</span><span class="tile-n">03</span><svg class="schem" data-kind="t-logistics" data-tone="night" aria-hidden="true"></svg><span class="tile-d">Dispatch, tracking, proof of delivery, invoicing</span></a>
-      <a class="tile" href="#sector-marketing"><span class="tile-k">Marketing</span><span class="tile-n">04</span><svg class="schem" data-kind="t-marketing" data-tone="night" aria-hidden="true"></svg><span class="tile-d">The tools marketing teams run on, not the campaigns</span></a>
+      <a class="tile" href="#sector-finance" data-open="sector-finance"><span class="tile-k">Finance</span><span class="tile-n">01</span><svg class="schem" data-kind="t-finance" data-tone="night" aria-hidden="true"></svg><span class="tile-d">Credit, reconciliation and compliance systems</span></a>
+      <a class="tile" href="#sector-telecoms" data-open="sector-telecoms"><span class="tile-k">Telecoms</span><span class="tile-n">02</span><svg class="schem" data-kind="t-telecoms" data-tone="night" aria-hidden="true"></svg><span class="tile-d">Network quality, regulatory and field operations tools</span></a>
+      <a class="tile" href="#sector-logistics" data-open="sector-logistics"><span class="tile-k">Logistics</span><span class="tile-n">03</span><svg class="schem" data-kind="t-logistics" data-tone="night" aria-hidden="true"></svg><span class="tile-d">Dispatch, tracking, delivery and invoicing software</span></a>
+      <a class="tile" href="#sector-marketing" data-open="sector-marketing"><span class="tile-k">Marketing</span><span class="tile-n">04</span><svg class="schem" data-kind="t-marketing" data-tone="night" aria-hidden="true"></svg><span class="tile-d">Lead, customer data and reporting tools</span></a>
     </div>
   </div>
 </section>
@@ -157,11 +157,23 @@
 <section class="sec gut" id="sectors" aria-labelledby="sec-h" style="padding-top:0">
   <div class="inner">
     <h2 class="inline-head" id="sec-h"><span class="eyebrow">Sectors</span>Built inside high-stakes operations.</h2>
-    <div class="slist">
-      <div class="srow" id="sector-finance"><h3>Finance</h3><p>Credit decisions, reconciliations, compliance reporting: work where one error is expensive.</p></div>
-      <div class="srow" id="sector-telecoms"><h3>Telecoms</h3><p>Network quality, regulatory oversight and operations at scale.</p></div>
-      <div class="srow" id="sector-logistics"><h3>Logistics</h3><p>Dispatch, tracking, proof of delivery, invoicing.</p></div>
-      <div class="srow" id="sector-marketing"><h3>Marketing</h3><p>We build the tools marketing teams run on, not the campaigns.</p></div>
+    <div class="acc">
+      <div class="acc-item open" id="sector-finance">
+        <h3><button class="acc-btn" type="button" aria-expanded="true" aria-controls="ap-finance"><span class="acc-name">Finance</span><span class="acc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5V19 M5 12H19"/></svg></span></button></h3>
+        <div class="acc-panel" id="ap-finance" role="region" aria-label="Finance"><div><div class="acc-in"><p>We build the systems behind lending, payments and reporting, where one error is expensive.</p><ul class="caps"><li>Credit decisioning and loan workflows</li><li>Reconciliation across bank feeds, ledgers and payment providers</li><li>Compliance and regulatory reporting with a full audit trail</li><li>Embedded finance products that platforms offer their customers</li></ul></div></div></div>
+      </div>
+      <div class="acc-item" id="sector-telecoms">
+        <h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="ap-telecoms"><span class="acc-name">Telecoms</span><span class="acc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5V19 M5 12H19"/></svg></span></button></h3>
+        <div class="acc-panel" id="ap-telecoms" role="region" aria-label="Telecoms"><div><div class="acc-in"><p>We build tools that help operators and regulators measure network performance and act on it.</p><ul class="caps"><li>Network quality measurement and monitoring dashboards</li><li>Regulatory reporting and compliance tracking</li><li>Field operations: site visits, faults and maintenance</li><li>Billing and revenue reconciliation</li></ul></div></div></div>
+      </div>
+      <div class="acc-item" id="sector-logistics">
+        <h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="ap-logistics"><span class="acc-name">Logistics</span><span class="acc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5V19 M5 12H19"/></svg></span></button></h3>
+        <div class="acc-panel" id="ap-logistics" role="region" aria-label="Logistics"><div><div class="acc-in"><p>We build software that keeps shipments, drivers and invoices in step.</p><ul class="caps"><li>Dispatch and route planning</li><li>Live shipment tracking with exception alerts</li><li>Digital proof of delivery</li><li>Invoicing that matches what was delivered</li></ul></div></div></div>
+      </div>
+      <div class="acc-item" id="sector-marketing">
+        <h3><button class="acc-btn" type="button" aria-expanded="false" aria-controls="ap-marketing"><span class="acc-name">Marketing</span><span class="acc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5V19 M5 12H19"/></svg></span></button></h3>
+        <div class="acc-panel" id="ap-marketing" role="region" aria-label="Marketing"><div><div class="acc-in"><p>We build the tools marketing teams run on, not the campaigns.</p><ul class="caps"><li>Lead capture and routing</li><li>One view of customer data across tools</li><li>Campaign and performance reporting</li><li>Automation between ad platforms, CRM and sales</li></ul></div></div></div>
+      </div>
     </div>
   </div>
 </section>
