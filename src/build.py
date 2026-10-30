@@ -79,7 +79,7 @@ def footer():
     return f"""<footer class="ftr gut">
   <div class="wrap">
     <div class="f-cols">
-      <div><h2>Company</h2><ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="index.html#sectors">Sectors</a></li><li><a href="index.html#how">How we work</a></li></ul></div>
+      <div><h2>Company</h2><ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="index.html#sectors">Sectors</a></li><li><a href="index.html#how">How we work</a></li><li><a href="brand.html">Brand system</a></li></ul></div>
       <div><h2>Contact</h2><div class="f-mail"><span class="addr">work@1960labs.com</span><button class="copy" type="button" data-copy="work@1960labs.com">Copy</button></div>
         <a class="btn btn-light btn-sm" href="diagnostic.html"><span>Book a diagnostic</span></a></div>
       <div><h2>Social</h2><ul><li><a href="https://www.linkedin.com/" data-todo="1960 Labs LinkedIn URL">LinkedIn</a></li><li><a href="https://x.com/" data-todo="1960 Labs X URL">X</a></li></ul></div>
@@ -145,3 +145,7 @@ if __name__ == "__main__":
     for name in PAGES:
         (OUT / name).write_text(render(name))
         print("built", name)
+    # Stand-alone pages keep their own layout and styles; only reachable from the footer.
+    for f in (SRC / "standalone").glob("*.html"):
+        (OUT / f.name).write_text(f.read_text().replace("{{FAVICON}}", FAVICON))
+        print("built", f.name)

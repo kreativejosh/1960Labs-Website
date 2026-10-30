@@ -8,6 +8,7 @@ Static marketing site for 1960 Labs, built on the 1960 Labs brand system v1.0. P
 - `work.html` - CreditHub and 1960 Network
 - `diagnostic.html` - Book a diagnostic (form not yet wired to a backend)
 - `legal.html` - Privacy, terms, data handling (placeholders)
+- `brand.html` - The 1960 Labs brand system. Linked only from the footer and marked `noindex`.
 
 ## Structure
 
@@ -15,6 +16,7 @@ Static marketing site for 1960 Labs, built on the 1960 Labs brand system v1.0. P
 - `src/pages/` - page bodies
 - `src/vignettes.html` - example UI cards for the How we work section
 - `src/styles.css`, `src/site.js` - shared styles and behaviour
+- `src/standalone/brand.html` - the brand system page, copied to `site/` unchanged apart from the favicon
 - `src/build.py` - adds the shared head, header, footer and logo to each page
 
 ## Build
