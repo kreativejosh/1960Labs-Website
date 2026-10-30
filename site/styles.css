@@ -291,16 +291,9 @@ h1, h2, h3, h4 { margin: 0; color: var(--ink); font-weight: 600; text-wrap: bala
 .acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur-slow) var(--ease-open); }
 .acc-item.open .acc-panel { grid-template-rows: 1fr; }
 .acc-panel > div { overflow: hidden; min-height: 0; }
-.acc-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px 48px; padding: 0 0 32px; }
-.acc-in > p { font: 500 19px/26px var(--font-sans); letter-spacing: -.02em; color: var(--ink); max-width: 30ch; }
-.caps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-.caps li { position: relative; padding: 14px 16px 14px 20px; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 15px; line-height: 21px; }
-.caps li:nth-child(odd) { border-right: 1px solid var(--line); }
-.caps li::before { content: ""; position: absolute; left: 0; top: 21px; width: 7px; height: 7px; background: var(--ink); }
-.caps li:nth-child(even) { padding-left: 36px; }
-.caps li:nth-child(even)::before { left: 16px; }
-@media (max-width: 760px) { .acc-in { grid-template-columns: minmax(0, 1fr); } }
-@media (max-width: 520px) { .caps { grid-template-columns: minmax(0, 1fr); } .caps li:nth-child(odd) { border-right: 0; } .caps li:nth-child(even) { padding-left: 20px; } .caps li:nth-child(even)::before { left: 0; } }
+.acc-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 48px; padding: 0 0 32px; }
+.acc-in > p { grid-column: 2; font-size: 17px; line-height: 26px; color: var(--ink-2); max-width: 46ch; }
+@media (max-width: 760px) { .acc-in { grid-template-columns: minmax(0, 1fr); } .acc-in > p { grid-column: 1; } }
 
 /* ---------- work band (Poetic's testimonial carousel) ---------- */
 .wb { background: var(--night) var(--grain); color: var(--on-night); padding-block: clamp(20px, 3vw, 32px) 0; overflow: hidden; }
