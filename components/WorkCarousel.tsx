@@ -2,17 +2,17 @@
 import Link from "next/link";
 import { useRef, useState, type KeyboardEvent } from "react";
 import { Icon } from "./Icon";
-import { NetworkDash } from "./NetworkDash";
-import { Schematic } from "./Schematic";
+import { ProjectVisual } from "./ProjectVisual";
+import { useWorkPanel } from "./WorkPanel";
+import type { Project } from "@/lib/content";
 import { prefersReducedMotion } from "@/lib/useInView";
-
-type Project = { id: string; name: string; headline: string; summary: string; sector: string; deliveredAs: string };
 
 /** Our work band (Poetic's testimonial carousel): tabs, arrows, a visual and the giant project name. */
 export function WorkCarousel({ title, projects }: { title: string; projects: readonly Project[] }) {
   const [cur, setCur] = useState(0);
   const [slot, setSlot] = useState(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const { show: view, panel } = useWorkPanel(projects);
   const show = (i: number, focus = false) => {
     const n = (i + projects.length) % projects.length;
     setCur(n);
@@ -50,18 +50,17 @@ export function WorkCarousel({ title, projects }: { title: string; projects: rea
                   <div><dt>Delivered as</dt><dd>{p.deliveredAs}</dd></div>
                 </dl>
                 <div>
-                  <Link className="btn btn-ghost-n btn-sm" href={`/work#${p.id}`}><span>Read the case study</span><Icon name="arrow-right" /></Link>
+                  <button type="button" className="btn btn-ghost-n btn-sm" onClick={() => view(i)} aria-haspopup="dialog"><span>View work</span><Icon name="arrow-right" /></button>
                 </div>
               </article>
             ))}
           </div>
           <div className="wb-vis">
-            <div className={cur === 0 ? `on${slot ? " slot-go" : ""}` : undefined} key={`v0-${cur === 0 ? slot : "x"}`}>
-              <Schematic kind="credithub" tone="night" label="CreditHub sits between the platform its merchants use and the lenders" />
-            </div>
-            <div className={cur === 1 ? `on${slot ? " slot-go" : ""}` : undefined} key={`v1-${cur === 1 ? slot : "x"}`}>
-              <NetworkDash />
-            </div>
+            {projects.map((p, i) => (
+              <div key={`v${i}-${cur === i ? slot : "x"}`} className={cur === i ? `on${slot ? " slot-go" : ""}` : undefined}>
+                <ProjectVisual id={p.id} />
+              </div>
+            ))}
           </div>
         </div>
         <div className="wb-ctrl">
@@ -75,6 +74,7 @@ export function WorkCarousel({ title, projects }: { title: string; projects: rea
           {projects.map((p, i) => <span key={p.id} className={i === cur ? "on" : undefined}>{p.name}</span>)}
         </div>
       </div>
+      {panel}
     </section>
   );
 }

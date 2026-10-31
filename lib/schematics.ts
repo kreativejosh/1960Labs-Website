@@ -79,6 +79,14 @@ export const SCHEMES: Record<string, Scheme> = {
     { n: [580, 150, 'CREDIT LIVE', 0, 1] },
     { t: [345, 52, 'LAUNCH QUICKLY', 'middle'] }, { t: [345, 260, 'BUILD YOUR OWN PRODUCT', 'middle'] }
   ] },
+  energy: { vb: [640, 300], items: [
+    { box: [30, 60, 140, 44, 'PLANT'] }, { box: [30, 128, 140, 44, 'PIPELINE'] }, { box: [30, 196, 140, 44, 'SUBSTATION'] },
+    { d: 'M170 82H230L250 102V150H310', main: true }, { d: 'M170 150H310', main: true }, { d: 'M170 218H230L250 198V150H310', main: true },
+    { box: [310, 124, 160, 52, 'MONITORING', 1] },
+    { d: 'M390 124V60H580', manual: true }, { n: [490, 60, 'SITE VISITS', 1] },
+    { d: 'M470 150H520V110H580', main: true }, { d: 'M520 150V200H580', main: true },
+    { n: [580, 110, 'LIVE VIEW', 0, 1] }, { n: [580, 200, 'ALERT', 0, 0, 1] }
+  ] },
   network: { vb: [640, 300], items: [
     { box: [30, 125, 120, 50, 'PROBE'] },
     { d: 'M150 150H200V70H260', main: true }, { d: 'M150 150H260', main: true }, { d: 'M150 150H200V230H260', main: true },
