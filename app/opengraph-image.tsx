@@ -34,7 +34,7 @@ export default async function OgImage() {
             <div style={{ display: "flex" }}>{line2}<Stop s={15} b={12} /></div>
           </div>
           <div style={{ fontSize: 28, fontWeight: 500, letterSpacing: -0.5, color: "#63625C", maxWidth: 940, lineHeight: 1.25 }}>
-            Custom software, automation and AI for finance, telecoms, logistics and marketing teams.
+            Custom software, automation and AI for finance, telecoms, logistics, marketing and energy teams.
           </div>
         </div>
       </div>

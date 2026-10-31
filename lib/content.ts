@@ -4,7 +4,7 @@ export const HERO = {
   title: "Complex work, engineered to run itself",
   subhead:
     "We find the work that slows your business down and fix it with custom software, automation or AI, whichever your business is ready for.",
-  body: "1960 Labs is the custom solutions partner for finance, telecoms, logistics and marketing teams whose processes don't fit off-the-shelf tools.",
+  body: "1960 Labs is the custom solutions partner for finance, telecoms, logistics, marketing and energy teams whose processes don't fit off-the-shelf tools.",
 };
 
 export const ABOUT = {
@@ -53,6 +53,11 @@ export const SECTORS = [
     id: "marketing", name: "Marketing", schematic: "t-marketing",
     tile: "Automating the operations behind marketing teams",
     body: "We build software that automates the operations behind marketing teams and agencies. Lead capture and routing, customer data and reporting run on systems fitted to how the team works, so people spend their time on the work itself.",
+  },
+  {
+    id: "energy", name: "Energy", schematic: "t-energy",
+    tile: "Monitoring energy infrastructure and facilities",
+    body: "We build software that monitors infrastructure and facilities for energy companies. Readings from plants, pipelines and substations come into one live view, so faults are caught early and every check is on record. We built this for an energy company in Gabon.",
   },
 ] as const;
 

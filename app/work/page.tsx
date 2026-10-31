@@ -3,7 +3,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { Heat, NetworkDash } from "@/components/NetworkDash";
 import { Rise } from "@/components/Rise";
 import { Schematic } from "@/components/Schematic";
-import { Slot } from "@/components/Slot";
 import { PROJECTS, WORK_INTRO } from "@/lib/content";
 import { pageMeta, workLd } from "@/lib/seo";
 
@@ -34,22 +33,11 @@ export default function Work() {
         <div className="inner">
           <span className="eyebrow">Our work</span>
           <Rise as="h1" id="ph" className="d-1" text={WORK_INTRO.title} />
-          <div className="jump">{PROJECTS.map((p) => <a key={p.id} href={`#${p.id}`}>{p.name}</a>)}</div>
-        </div>
-      </section>
-
-      <section className="gut statement" aria-label="Summary">
-        <div className="wrap">
-          <div className="band">
-            <Slot className="win">
-              <p>Credit infrastructure that platforms build into their products. A quality dashboard that telecoms regulators base their oversight on.</p>
-            </Slot>
-          </div>
         </div>
       </section>
 
       <article aria-labelledby="ch-h">
-        <section className="sec gut" style={{ paddingBottom: 0 }}>
+        <section className="sec gut" style={{ paddingTop: 0, paddingBottom: 0 }}>
           <div className="inner sec-head center" style={{ marginBottom: "clamp(32px,5vw,56px)" }}>
             <span className="eyebrow">{credithub.name}</span>
             <Rise id="ch-h" className="d-2" text={`${credithub.category}.`} />

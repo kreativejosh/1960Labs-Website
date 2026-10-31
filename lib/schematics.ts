@@ -33,6 +33,14 @@ export const SCHEMES: Record<string, Scheme> = {
     { n: [40, 62, 'FORM'] }, { n: [40, 112, 'ADS'] }, { n: [40, 162, 'EVENT', 0, 0, 1] },
     { n: [150, 112, 'ROUTE'] }, { n: [230, 112, 'CRM'] }, { n: [280, 112, 'REPORT', 0, 1] }, { n: [190, 172, 'SHEETS', 1, 0, 1] }
   ] },
+  't-energy': { vb: [320, 220], items: [
+    { d: 'M40 62H90V112H150', main: true }, { d: 'M40 112H150', main: true }, { d: 'M40 162H90V112H150', main: true },
+    { d: 'M150 112H280', main: true }, { d: 'M220 112V172H280', main: true },
+    { d: 'M150 112V52H280', manual: true },
+    { n: [40, 62, 'PLANT'] }, { n: [40, 112, 'PIPELINE'] }, { n: [40, 162, 'SUBSTATION', 0, 0, 1] },
+    { n: [150, 112, 'MONITOR', 0, 0, 1] }, { n: [220, 52, 'SITE VISITS', 1] },
+    { n: [280, 112, 'LIVE VIEW', 0, 1] }, { n: [280, 172, 'ALERT', 0, 0, 1] }
+  ] },
   /* large drawings, 640 x 300 */
   diagnose: { vb: [640, 300], items: [
     { t: [60, 36, 'ORDER INTAKE · AS IT REALLY RUNS', 'start'] },

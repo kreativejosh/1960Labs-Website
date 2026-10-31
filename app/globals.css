@@ -155,20 +155,25 @@ html.intro-on .intro { position: fixed; inset: 0; z-index: 90; background: var(-
 }
 
 /* sector tiles under the hero (Poetic's proof-tile row) */
-.tiles4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.tile { position: relative; display: grid; grid-template-rows: auto 1fr auto; aspect-ratio: 11 / 12; max-width: 100%; padding: 14px 16px 16px; background: var(--night) var(--grain); color: var(--on-night); text-decoration: none; overflow: hidden; transition: transform var(--dur-base) var(--ease-out); }
-.tile .tile-k { font: 700 clamp(30px, 3vw, 44px)/1 var(--font-sans); letter-spacing: -.045em; }
+.tiles4 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.tile { position: relative; display: grid; grid-template-rows: auto 1fr auto; aspect-ratio: 11 / 13; max-width: 100%; padding: 14px 16px 16px; background: var(--night) var(--grain); color: var(--on-night); text-decoration: none; overflow: hidden; transition: transform var(--dur-base) var(--ease-out); }
+.tile .tile-k { font: 700 clamp(28px, 2.5vw, 40px)/1 var(--font-sans); letter-spacing: -.045em; }
 .tile .tile-d { font: 600 15px/18px var(--font-sans); letter-spacing: -.02em; max-width: 22ch; }
 .tile .tile-n { position: absolute; top: 18px; right: 16px; font: 400 11px/14px var(--font-mono); color: var(--on-night-muted); }
 .tile .schem { width: 100%; height: 100%; min-height: 0; align-self: center; }
 .tile::after, .corner::after { content: ""; position: absolute; top: 0; right: 0; width: 14px; height: 14px; background: var(--blue); transform: scale(0); transform-origin: 100% 0; transition: transform var(--dur-base) var(--ease-pop); }
 .tile:hover, .tile:focus-visible { transform: translateY(-4px); }
 .tile:hover::after, .tile:focus-visible::after { transform: scale(1); }
-@media (max-width: 1080px) { .tiles4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tile { aspect-ratio: 4 / 3; } }
+/* five tiles: a row of three over a row of two, all the same height */
+@media (max-width: 1080px) {
+  .tiles4 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .tile { grid-column: span 2; aspect-ratio: auto; height: 300px; }
+  .tile:nth-child(n + 4) { grid-column: span 3; }
+}
 @media (max-width: 640px) {
   .tiles4 { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; margin-inline: calc(-1 * var(--g)); padding-inline: var(--g); scrollbar-width: none; }
   .tiles4::-webkit-scrollbar { display: none; }
-  .tile { flex: 0 0 82%; aspect-ratio: 1 / 1.05; scroll-snap-align: start; }
+  .tile { flex: 0 0 82%; aspect-ratio: 1 / 1.05; height: auto; scroll-snap-align: start; }
 }
 
 /* ---------- section heads ---------- */
@@ -406,16 +411,6 @@ html.intro-on .intro { position: fixed; inset: 0; z-index: 90; background: var(-
 .row-txt p { font: 600 16px/21px var(--font-sans); letter-spacing: -.015em; color: var(--ink); max-width: 36ch; }
 .row-txt p.plain { font-weight: 400; color: var(--ink-2); line-height: 24px; letter-spacing: 0; }
 @media (max-width: 860px) { .row { grid-template-columns: minmax(0, 1fr); } .row.rev .row-vis { order: 0; } }
-
-/* chips index on sub-pages */
-.jump { display: flex; flex-wrap: wrap; gap: 8px; }
-.jump a { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 1px solid var(--line-2); font: 500 12px/1 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); text-decoration: none; transition: background var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard); }
-.jump a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-
-/* centred statement band on sub-pages */
-.statement { padding-inline: clamp(16px, 6vw, 80px); }
-.statement .win { padding: clamp(24px, 6vw, 72px) clamp(16px, 5vw, 64px); text-align: center; }
-.statement .win p { font: 500 clamp(22px, 2.6vw, 34px)/1.25 var(--font-sans); letter-spacing: -.03em; color: var(--ink-2); max-width: 26em; margin-inline: auto; text-wrap: balance; }
 
 /* ---------- diagnostic page ---------- */
 .book { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px clamp(32px, 6vw, 96px); align-items: start; padding-top: clamp(56px, 7vw, 104px); padding-bottom: var(--sec); }

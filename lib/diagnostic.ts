@@ -4,7 +4,7 @@ export type Booking = {
   sector?: string; process: string; tried?: string[]; website?: string;
 };
 
-export const SECTOR_OPTIONS = ["Finance", "Telecoms", "Logistics", "Marketing", "Other"] as const;
+export const SECTOR_OPTIONS = ["Finance", "Telecoms", "Logistics", "Marketing", "Energy", "Other"] as const;
 export const TRIED_OPTIONS = ["Spreadsheets", "Off-the-shelf software", "More people", "Nothing yet"] as const;
 
 export function validate(b: Partial<Booking>): Partial<Record<"name" | "email" | "company" | "process", string>> {
