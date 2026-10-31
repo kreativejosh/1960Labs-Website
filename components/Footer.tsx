@@ -33,9 +33,8 @@ export function Footer() {
           <div>
             <h2>Legal</h2>
             <ul>
+              <li><Link href="/legal#protect">How we protect your work</Link></li>
               <li><Link href="/legal#privacy">Privacy Policy</Link></li>
-              <li><Link href="/legal#terms">Terms of Use</Link></li>
-              <li><Link href="/legal#data">How we handle your data</Link></li>
             </ul>
           </div>
         </div>
