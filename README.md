@@ -19,7 +19,7 @@ Copy `.env.example` to `.env.local` and fill it in (see Environment below). Node
 | `/` | Home: hero, What we are, How we work (`#how`), Right-sized technology, Sectors (`#sectors`), Our work, call to action |
 | `/work` | CreditHub and 1960 Network |
 | `/diagnostic` | Book a diagnostic form, posting to `/api/diagnostic` |
-| `/legal` | Privacy, terms, data handling (placeholders, `noindex` until filled) |
+| `/legal` | How we protect your work (`#protect`) and the Privacy Policy (`#privacy`) |
 | `/brand` | The brand system, served from `public/brand.html`. Linked only from the footer, `noindex`. |
 
 ## Where things live
@@ -63,6 +63,7 @@ Vercel is the simplest option: import the repo, set the environment variables, a
 - Set up Resend (or swap the provider in `app/api/diagnostic/route.ts`), and verify the sending domain.
 - Confirm which services 1960 Network measures (currently "voice, data and SMS").
 - Replace the LinkedIn and X URLs in `lib/site.ts`.
-- Supply the legal text in `app/legal/page.tsx`, then remove its `noindex`.
+- Have a lawyer review `app/legal/page.tsx`, and confirm the time limits it commits to (30 days, 72 hours, 24 months).
+- If you add analytics or another service provider, update the Privacy Policy to match.
 - Replace the example dashboard figures with real results once they can be published.
 - After launch, submit the sitemap in Google Search Console and Bing Webmaster Tools.
