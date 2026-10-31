@@ -33,6 +33,14 @@ export const SCHEMES: Record<string, Scheme> = {
     { n: [40, 62, 'FORM'] }, { n: [40, 112, 'ADS'] }, { n: [40, 162, 'EVENT', 0, 0, 1] },
     { n: [150, 112, 'ROUTE'] }, { n: [230, 112, 'CRM'] }, { n: [280, 112, 'REPORT', 0, 1] }, { n: [190, 172, 'SHEETS', 1, 0, 1] }
   ] },
+  't-energy': { vb: [320, 220], items: [
+    { d: 'M40 62H90V112H150', main: true }, { d: 'M40 112H150', main: true }, { d: 'M40 162H90V112H150', main: true },
+    { d: 'M150 112H280', main: true }, { d: 'M220 112V172H280', main: true },
+    { d: 'M150 112V52H280', manual: true },
+    { n: [40, 62, 'PLANT'] }, { n: [40, 112, 'PIPELINE'] }, { n: [40, 162, 'SUBSTATION', 0, 0, 1] },
+    { n: [150, 112, 'MONITOR', 0, 0, 1] }, { n: [220, 52, 'SITE VISITS', 1] },
+    { n: [280, 112, 'LIVE VIEW', 0, 1] }, { n: [280, 172, 'ALERT', 0, 0, 1] }
+  ] },
   /* large drawings, 640 x 300 */
   diagnose: { vb: [640, 300], items: [
     { t: [60, 36, 'ORDER INTAKE · AS IT REALLY RUNS', 'start'] },
@@ -70,6 +78,14 @@ export const SCHEMES: Record<string, Scheme> = {
     { d: 'M410 90H480V150H580', main: true }, { d: 'M410 210H480V150H580', main: true },
     { n: [580, 150, 'CREDIT LIVE', 0, 1] },
     { t: [345, 52, 'LAUNCH QUICKLY', 'middle'] }, { t: [345, 260, 'BUILD YOUR OWN PRODUCT', 'middle'] }
+  ] },
+  energy: { vb: [640, 300], items: [
+    { box: [30, 60, 140, 44, 'PLANT'] }, { box: [30, 128, 140, 44, 'PIPELINE'] }, { box: [30, 196, 140, 44, 'SUBSTATION'] },
+    { d: 'M170 82H230L250 102V150H310', main: true }, { d: 'M170 150H310', main: true }, { d: 'M170 218H230L250 198V150H310', main: true },
+    { box: [310, 124, 160, 52, 'MONITORING', 1] },
+    { d: 'M390 124V60H580', manual: true }, { n: [490, 60, 'SITE VISITS', 1] },
+    { d: 'M470 150H520V110H580', main: true }, { d: 'M520 150V200H580', main: true },
+    { n: [580, 110, 'LIVE VIEW', 0, 1] }, { n: [580, 200, 'ALERT', 0, 0, 1] }
   ] },
   network: { vb: [640, 300], items: [
     { box: [30, 125, 120, 50, 'PROBE'] },

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   publisher: SITE.name,
   keywords: [
     "custom software", "business process automation", "workflow automation", "AI solutions",
-    "financial operations automation", "telecoms software", "logistics software", "marketing operations tools",
+    "financial operations automation", "telecoms software", "logistics software", "marketing operations tools", "energy infrastructure monitoring",
   ],
   category: "technology",
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },

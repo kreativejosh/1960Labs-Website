@@ -3,6 +3,8 @@ export const ICON_PATHS = {
   "arrow-right": "M4 12H19 M13 6L19 12L13 18",
   "arrow-left": "M20 12H5 M11 6L5 12L11 18",
   "plus": "M12 5V19 M5 12H19",
+  "close": "M6 6L18 18 M18 6L6 18",
+  "external": "M14 4H20V10 M20 4L11 13 M17 14V20H4V7H10",
   "search": "M4 4H15V15H4Z M15 15L20 20",
   "code": "M8 7L3 12L8 17 M16 7L21 12L16 17",
   "automate": "M4 10V5H18 M15 2L18 5L15 8 M20 14V19H6 M9 16L6 19L9 22",

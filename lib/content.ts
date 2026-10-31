@@ -4,7 +4,7 @@ export const HERO = {
   title: "Complex work, engineered to run itself",
   subhead:
     "We find the work that slows your business down and fix it with custom software, automation or AI, whichever your business is ready for.",
-  body: "1960 Labs is the custom solutions partner for finance, telecoms, logistics and marketing teams whose processes don't fit off-the-shelf tools.",
+  body: "1960 Labs is the custom solutions partner for finance, telecoms, logistics, marketing and energy teams whose processes don't fit off-the-shelf tools.",
 };
 
 export const ABOUT = {
@@ -54,11 +54,24 @@ export const SECTORS = [
     tile: "Automating the operations behind marketing teams",
     body: "We build software that automates the operations behind marketing teams and agencies. Lead capture and routing, customer data and reporting run on systems fitted to how the team works, so people spend their time on the work itself.",
   },
+  {
+    id: "energy", name: "Energy", schematic: "t-energy",
+    tile: "Monitoring energy infrastructure and facilities",
+    body: "We build software that monitors infrastructure and facilities for energy companies. Readings from plants, pipelines and substations come into one live view, so faults are caught early and every check is on record. We built this for an energy company in Gabon.",
+  },
 ] as const;
 
 export const WORK_INTRO = { title: "Live systems, built for real operating conditions." };
 
-export const PROJECTS = [
+/* Case summaries. `null` = not supplied yet: the work panel shows "To be confirmed" until 1960 Labs fills it in. */
+export type Project = {
+  id: string; name: string; category: string; headline: string; summary: string;
+  sector: string; deliveredAs: string; builtFor: string;
+  client: string | null; year: string | null; url: string | null;
+  problem: string; solution: string; impact: string | null;
+};
+
+export const PROJECTS: readonly Project[] = [
   {
     id: "credithub",
     name: "CreditHub",
@@ -69,6 +82,10 @@ export const PROJECTS = [
     sector: "Finance",
     deliveredAs: "SDK and APIs",
     builtFor: "Platform operators and lenders",
+    client: null, year: null, url: null,
+    problem: "Merchants need finance inside the platforms they already use, but platform operators don't want to build a lending business of their own.",
+    solution: "CreditHub connects platform operators with lenders. Operators integrate the CreditHub SDK to launch quickly, or use the CreditHub APIs to build their own credit product.",
+    impact: null,
   },
   {
     id: "network",
@@ -81,8 +98,28 @@ export const PROJECTS = [
     sector: "Telecoms",
     deliveredAs: "Analytics dashboard for a network analysis device",
     builtFor: "Telecoms regulators",
+    client: null, year: null, url: null,
+    problem: "Regulators need evidence of how each operator's network performs for subscribers, service by service, to base their oversight on.",
+    solution: "A dashboard for a network analysis device that measures each operator's signal strength across services. Regulators compare operators side by side and find weak spots.",
+    impact: null,
   },
-] as const;
+  {
+    // Working name: confirm the product name before launch.
+    id: "energy",
+    name: "Energy Monitor",
+    category: "Infrastructure and facility monitoring for energy",
+    headline: "Every site and facility, watched from one place.",
+    summary:
+      "A monitoring system for an energy company in Gabon. It tracks the condition of the company's infrastructure and facilities in one place, so the team can see problems early and act on them.",
+    sector: "Energy",
+    deliveredAs: "Monitoring system",
+    builtFor: "Energy companies",
+    client: "An energy company in Gabon", year: null, url: null,
+    problem: "The company runs infrastructure and facilities across several sites and needed one reliable view of their condition.",
+    solution: "We built a system that monitors the company's infrastructure and facilities and brings the status of every site into one live view.",
+    impact: null,
+  },
+];
 
 export const CTA = {
   title: "Turn complex work into simple systems",
